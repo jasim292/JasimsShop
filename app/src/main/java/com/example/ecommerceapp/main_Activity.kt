@@ -1,7 +1,6 @@
-package com.example.shopping_cart
+package com.example.ecommerceapp
 
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -100,13 +99,13 @@ class MainActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { documents ->
                 val banners = documents.map { doc ->
-                    BannerSliderAdapter.BannerItem(
+                    NavigationSlide.BannerItem(
                         imageUrl = doc.getString("imageUrl") ?: "",
                         offerText = doc.getString("offerText") ?: "",
                         isActive = doc.getBoolean("isActive") ?: true
                     )
                 }
-                bannerSlider.adapter = BannerSliderAdapter(banners) { clickedBanner ->
+                bannerSlider.adapter = NavigationSlide(banners) { clickedBanner ->
                     Toast.makeText(this, "Selected: ${clickedBanner.offerText}", Toast.LENGTH_SHORT).show()
                 }
             }

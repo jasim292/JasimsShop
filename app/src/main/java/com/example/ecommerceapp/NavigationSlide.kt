@@ -1,6 +1,5 @@
-package com.example.shopping_cart
+package com.example.ecommerceapp
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class BannerSliderAdapter(
+class NavigationSlide(
     private val bannerItems: List<BannerItem>,
     private val onBannerClick: (BannerItem) -> Unit = {} // Default empty click handler
-) : RecyclerView.Adapter<BannerSliderAdapter.BannerViewHolder>() {
+) : RecyclerView.Adapter<NavigationSlide.BannerViewHolder>() {
 
     data class BannerItem(
         val imageUrl: String,
